@@ -15,6 +15,10 @@ public class AddProductToClientUseCase {
 			return "el cliente no existe";
 		}
 		
+		if (!client.isStatus()) {
+			return "el cliente está inactivo";
+		}
+		
 		Product product = new SavingsAccount();
 		if (addProduct.getTypeProduct() == 'C') {
 			product = new CheckingAccount();			
